@@ -19,11 +19,13 @@ const startChangingBgColors = () => {
     bgChangeInterval = setInterval(() => {
         changeBodyColor()
     }, 1000);
+    startBtn.disabled = true;
 };
 
 const stopChangingBgColors = () => {
     clearInterval(bgChangeInterval);
     body.style.backgroundColor = '';
+    startBtn.disabled = false;
 };
 
 startBtn.addEventListener('click', startChangingBgColors)
